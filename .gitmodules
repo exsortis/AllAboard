@@ -1,0 +1,3 @@
+[submodule "Libraries/xcconfigs"]
+	path = Libraries/xcconfigs
+	url = https://github.com/jspahrsummers/xcconfigs.git
