@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Conductor
+
+  Created by Paul Schifferer on 7/9/16.
+  Copyright © 2016 Pilgrimage Software. All rights reserved.
+*/
+
+"conductor.page.advance.title" = "Next";
