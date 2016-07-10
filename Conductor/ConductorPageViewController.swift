@@ -10,29 +10,43 @@ import UIKit
 
 
 /**
+ * A view controller for a page in the conductor view. You shouldn't have to create these, unless you are implementing
+ * your own data source.
  */
 public class ConductorPageViewController: UIViewController {
 
     /**
+     * Interface Builder property for the title label UI element.
+     * This element's content is set by setting properties of the `pageData` property.
      */
     @IBOutlet weak var titleLabel: UILabel!
     /**
+     * Interface Builder property for the image view UI element.
+     * This element's content is set by setting properties of the `pageData` property.
      */
     @IBOutlet weak var imageView: UIImageView!
     /**
+     * Interface Builder property for the body text UI element.
+     * This element's content is set by setting properties of the `pageData` property.
      */
     @IBOutlet weak var bodyTextView: UITextView!
     /**
+     * Interface Builder property for the advance button UI element.
+     * This element's content is set by setting properties of the `pageData` property.
      */
     @IBOutlet weak var advanceButton: UIButton!
     /**
+     * Interface Builder property for the skip button UI element.
+     * This element's content is set by setting properties of the `pageData` property.
      */
     @IBOutlet weak var skipButton: UIButton!
 
     /**
+     * Property to store the page number of the view that this controller represents.
      */
     public var pageNumber : Int = 0
     /**
+     * Property to store the page data that this controller should display.
      */
     public var pageData : ConductorPageData?
 
@@ -81,16 +95,12 @@ public class ConductorPageViewController: UIViewController {
 
     // MARK: - UI callbacks
 
-    /**
-     */
     @IBAction func advanceTouched(sender: UIButton) {
-        UIApplication.sharedApplication().sendAction(#selector(ConductorViewController.advanceTouched(_:)), to: nil, from: self, forEvent: nil)
+        //        .sendAction(#selector(ConductorViewController.advanceTouched(_:)), to: nil, from: self, forEvent: nil)
     }
 
-    /**
-     */
     @IBAction func skipTouched(sender: UIButton) {
-        UIApplication.sharedApplication().sendAction(#selector(ConductorViewController.skipTouched(_:)), to: nil, from: self, forEvent: nil)
+        //        UIApplication.sharedApplication().sendAction(#selector(ConductorViewController.skipTouched(_:)), to: nil, from: self, forEvent: nil)
     }
 
 

@@ -14,8 +14,8 @@ import UIKit
  */
 public struct ConductorPageData {
     /**
-* An optional title to display on the page.
- */
+     * An optional title to display on the page.
+     */
     public var titleText : String?
     /**
      * The body text to display on the page. This is the detailed explanation that the user will see.

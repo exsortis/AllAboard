@@ -10,27 +10,34 @@ import UIKit
 
 
 /**
+ * A protocol defining the delegate methods for a conductor view.
  */
 public protocol ConductorDelegate : class {
 
     /**
+     * Method called when the user has tapped the "skip" button. The delegate should dismiss the conductor UI and 
+     * continue with the app.
      */
     func conductorControllerUserWantsToSkip(controller : ConductorViewController)
 
 }
 
 /**
+ * The view controller that manages the entire conductor UI.
  */
 public class ConductorViewController: UIViewController, UIPageViewControllerDelegate {
 
     /**
+     * Interface Builder method for the background image of the conductor view.
      */
     @IBOutlet weak var backgroundImageView: UIImageView!
 
     /**
+     * An optional delegate for the conductor.
      */
     public weak var delegate : ConductorDelegate?
     /**
+     * The data source for the conductor. This should be set before the view is loaded.
      */
     public var dataSource : ConductorDataSource!
 
@@ -44,12 +51,14 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
     // MARK: - Responder chain methods
 
     /**
+     * This method is called via the responder chain when the user wants to advance the UI to the next page.
      */
     public func advanceTouched(sender : AnyObject?) {
 
     }
 
     /**
+     * This method is called via the responder chain when the user wants to skip the UI.
      */
     public func skipTouched(sender : AnyObject?) {
 
