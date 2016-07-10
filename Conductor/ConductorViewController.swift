@@ -90,7 +90,9 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
             vc.dataSource = self.dataSource
             vc.delegate = self
 
-            if let cpv = vc.storyboard?.instantiateViewControllerWithIdentifier("ConductorPageView") {
+            if let cpv = vc.storyboard?.instantiateViewControllerWithIdentifier("ConductorPageView") as? ConductorPageViewController,
+                let data = self.dataSource.pageData.first {
+                cpv.pageData = data
                 vc.setViewControllers([ cpv ], direction: .Forward, animated: true) { completed in }
             }
         }
