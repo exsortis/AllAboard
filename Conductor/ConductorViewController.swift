@@ -30,9 +30,9 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
     // MARK: - Properties
 
     /**
-     * Interface Builder method for the background image of the conductor view.
+     * Interface Builder property for the background image of the conductor view.
      */
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet public weak var backgroundImageView: UIImageView!
 
     /**
      * An optional delegate for the conductor.
