@@ -13,6 +13,9 @@ import UIKit
  * Value object to store a conductor page.
  */
 public struct ConductorPageData {
+
+    // MARK: - Properties
+
     /**
      * An optional title to display on the page.
      */
@@ -34,6 +37,9 @@ public struct ConductorPageData {
      */
     public var hideSkipButton : Bool = false
 
+
+    // MARK: - Initializer
+    
     /**
      * Designated initializer.
      */

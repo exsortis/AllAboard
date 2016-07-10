@@ -15,6 +15,8 @@ import UIKit
  */
 public class ConductorPageViewController: UIViewController {
 
+    // MARK: - Properties
+
     /**
      * Interface Builder property for the title label UI element.
      * This element's content is set by setting properties of the `pageData` property.
@@ -50,6 +52,9 @@ public class ConductorPageViewController: UIViewController {
      */
     public var pageData : ConductorPageData?
 
+
+    // MARK: - Initialization
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
 

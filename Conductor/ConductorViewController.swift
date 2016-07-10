@@ -27,6 +27,8 @@ public protocol ConductorDelegate : class {
  */
 public class ConductorViewController: UIViewController, UIPageViewControllerDelegate {
 
+    // MARK: - Properties
+
     /**
      * Interface Builder method for the background image of the conductor view.
      */
@@ -40,6 +42,9 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
      * The data source for the conductor. This should be set before the view is loaded.
      */
     public var dataSource : ConductorDataSource!
+
+
+    // MARK: - Initialization
 
     override public func viewDidLoad() {
         super.viewDidLoad()
