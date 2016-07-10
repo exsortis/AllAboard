@@ -18,6 +18,10 @@
 		5B25C8E81D317D300065A8E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B25C8E61D317D300065A8E4 /* Localizable.strings */; };
 		5B25C8EA1D317D600065A8E4 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B25C8E91D317D600065A8E4 /* Media.xcassets */; };
 		5B25C8EC1D31800C0065A8E4 /* Conductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25C8EB1D31800C0065A8E4 /* Conductor.swift */; };
+		5B25C91B1D31861B0065A8E4 /* ConductorDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25C91A1D31861B0065A8E4 /* ConductorDataSourceTests.swift */; };
+		5B25C91D1D3186310065A8E4 /* ConductorPageDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25C91C1D3186310065A8E4 /* ConductorPageDataTests.swift */; };
+		5B25C91F1D3186400065A8E4 /* ConductorPageViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25C91E1D3186400065A8E4 /* ConductorPageViewControllerTests.swift */; };
+		5B25C9211D31864D0065A8E4 /* ConductorViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B25C9201D31864D0065A8E4 /* ConductorViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,37 @@
 		5B25C8F31D3182560065A8E4 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Base.xcconfig; path = Configuration/Base.xcconfig; sourceTree = "<group>"; };
 		5B25C8F41D3182560065A8E4 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Configuration/Debug.xcconfig; sourceTree = "<group>"; };
 		5B25C8F51D3182560065A8E4 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Configuration/Release.xcconfig; sourceTree = "<group>"; };
+		5B25C8F81D3185790065A8E4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5B25C8FA1D3185790065A8E4 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		5B25C8FC1D3185790065A8E4 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		5B25C8FD1D3185790065A8E4 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		5B25C8FE1D3185790065A8E4 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		5B25C8FF1D3185790065A8E4 /* Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
+		5B25C9011D3185790065A8E4 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		5B25C9021D3185790065A8E4 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
+		5B25C9031D3185790065A8E4 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		5B25C9051D3185790065A8E4 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		5B25C9061D3185790065A8E4 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		5B25C9071D3185790065A8E4 /* iOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Framework.xcconfig"; sourceTree = "<group>"; };
+		5B25C9081D3185790065A8E4 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		5B25C90A1D3185790065A8E4 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		5B25C90B1D3185790065A8E4 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		5B25C90C1D3185790065A8E4 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		5B25C90D1D3185790065A8E4 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		5B25C90E1D3185790065A8E4 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		5B25C90F1D3185790065A8E4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5B25C9111D3185790065A8E4 /* tvOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "tvOS-Application.xcconfig"; sourceTree = "<group>"; };
+		5B25C9121D3185790065A8E4 /* tvOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "tvOS-Base.xcconfig"; sourceTree = "<group>"; };
+		5B25C9131D3185790065A8E4 /* tvOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "tvOS-Framework.xcconfig"; sourceTree = "<group>"; };
+		5B25C9141D3185790065A8E4 /* tvOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "tvOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		5B25C9161D3185790065A8E4 /* watchOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-Application.xcconfig"; sourceTree = "<group>"; };
+		5B25C9171D3185790065A8E4 /* watchOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-Base.xcconfig"; sourceTree = "<group>"; };
+		5B25C9181D3185790065A8E4 /* watchOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-Framework.xcconfig"; sourceTree = "<group>"; };
+		5B25C9191D3185790065A8E4 /* watchOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "watchOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		5B25C91A1D31861B0065A8E4 /* ConductorDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConductorDataSourceTests.swift; sourceTree = "<group>"; };
+		5B25C91C1D3186310065A8E4 /* ConductorPageDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConductorPageDataTests.swift; sourceTree = "<group>"; };
+		5B25C91E1D3186400065A8E4 /* ConductorPageViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConductorPageViewControllerTests.swift; sourceTree = "<group>"; };
+		5B25C9201D31864D0065A8E4 /* ConductorViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConductorViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +146,10 @@
 			isa = PBXGroup;
 			children = (
 				5B25C8D01D3154FC0065A8E4 /* ConductorTests.swift */,
+				5B25C91A1D31861B0065A8E4 /* ConductorDataSourceTests.swift */,
+				5B25C91C1D3186310065A8E4 /* ConductorPageDataTests.swift */,
+				5B25C91E1D3186400065A8E4 /* ConductorPageViewControllerTests.swift */,
+				5B25C9201D31864D0065A8E4 /* ConductorViewControllerTests.swift */,
 				5B25C8D21D3154FC0065A8E4 /* Info.plist */,
 			);
 			path = ConductorTests;
@@ -130,8 +169,100 @@
 		5B25C8F61D3184920065A8E4 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				5B25C8F71D3185790065A8E4 /* xcconfigs */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		5B25C8F71D3185790065A8E4 /* xcconfigs */ = {
+			isa = PBXGroup;
+			children = (
+				5B25C8F81D3185790065A8E4 /* .gitignore */,
+				5B25C8F91D3185790065A8E4 /* Base */,
+				5B25C9041D3185790065A8E4 /* iOS */,
+				5B25C9091D3185790065A8E4 /* Mac OS X */,
+				5B25C90F1D3185790065A8E4 /* README.md */,
+				5B25C9101D3185790065A8E4 /* tvOS */,
+				5B25C9151D3185790065A8E4 /* watchOS */,
+			);
+			name = xcconfigs;
+			path = Libraries/xcconfigs;
+			sourceTree = "<group>";
+		};
+		5B25C8F91D3185790065A8E4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5B25C8FA1D3185790065A8E4 /* Common.xcconfig */,
+				5B25C8FB1D3185790065A8E4 /* Configurations */,
+				5B25C9001D3185790065A8E4 /* Targets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5B25C8FB1D3185790065A8E4 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				5B25C8FC1D3185790065A8E4 /* Debug.xcconfig */,
+				5B25C8FD1D3185790065A8E4 /* Profile.xcconfig */,
+				5B25C8FE1D3185790065A8E4 /* Release.xcconfig */,
+				5B25C8FF1D3185790065A8E4 /* Test.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		5B25C9001D3185790065A8E4 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				5B25C9011D3185790065A8E4 /* Application.xcconfig */,
+				5B25C9021D3185790065A8E4 /* Framework.xcconfig */,
+				5B25C9031D3185790065A8E4 /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		5B25C9041D3185790065A8E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5B25C9051D3185790065A8E4 /* iOS-Application.xcconfig */,
+				5B25C9061D3185790065A8E4 /* iOS-Base.xcconfig */,
+				5B25C9071D3185790065A8E4 /* iOS-Framework.xcconfig */,
+				5B25C9081D3185790065A8E4 /* iOS-StaticLibrary.xcconfig */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		5B25C9091D3185790065A8E4 /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				5B25C90A1D3185790065A8E4 /* Mac-Application.xcconfig */,
+				5B25C90B1D3185790065A8E4 /* Mac-Base.xcconfig */,
+				5B25C90C1D3185790065A8E4 /* Mac-DynamicLibrary.xcconfig */,
+				5B25C90D1D3185790065A8E4 /* Mac-Framework.xcconfig */,
+				5B25C90E1D3185790065A8E4 /* Mac-StaticLibrary.xcconfig */,
+			);
+			path = "Mac OS X";
+			sourceTree = "<group>";
+		};
+		5B25C9101D3185790065A8E4 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				5B25C9111D3185790065A8E4 /* tvOS-Application.xcconfig */,
+				5B25C9121D3185790065A8E4 /* tvOS-Base.xcconfig */,
+				5B25C9131D3185790065A8E4 /* tvOS-Framework.xcconfig */,
+				5B25C9141D3185790065A8E4 /* tvOS-StaticLibrary.xcconfig */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
+		5B25C9151D3185790065A8E4 /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				5B25C9161D3185790065A8E4 /* watchOS-Application.xcconfig */,
+				5B25C9171D3185790065A8E4 /* watchOS-Base.xcconfig */,
+				5B25C9181D3185790065A8E4 /* watchOS-Framework.xcconfig */,
+				5B25C9191D3185790065A8E4 /* watchOS-StaticLibrary.xcconfig */,
+			);
+			path = watchOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +390,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B25C91D1D3186310065A8E4 /* ConductorPageDataTests.swift in Sources */,
+				5B25C9211D31864D0065A8E4 /* ConductorViewControllerTests.swift in Sources */,
+				5B25C91F1D3186400065A8E4 /* ConductorPageViewControllerTests.swift in Sources */,
+				5B25C91B1D31861B0065A8E4 /* ConductorDataSourceTests.swift in Sources */,
 				5B25C8D11D3154FC0065A8E4 /* ConductorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +521,7 @@
 		};
 		5B25C8D61D3154FC0065A8E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B25C8F41D3182560065A8E4 /* Debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -405,6 +541,7 @@
 		};
 		5B25C8D71D3154FC0065A8E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B25C8F51D3182560065A8E4 /* Release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -423,6 +560,7 @@
 		};
 		5B25C8D91D3154FC0065A8E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B25C8FF1D3185790065A8E4 /* Test.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ConductorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -433,6 +571,7 @@
 		};
 		5B25C8DA1D3154FC0065A8E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B25C8FF1D3185790065A8E4 /* Test.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = ConductorTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
