@@ -67,6 +67,12 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
      */
     public func advanceTouched(sender : AnyObject?) {
 
+        if currentPage >= dataSource.pageData.count {
+            self.delegate?.conductorControllerFinished(self)
+        }
+        else {
+
+        }
     }
 
     /**
