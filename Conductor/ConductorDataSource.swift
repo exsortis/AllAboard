@@ -48,7 +48,10 @@ public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
             if pageNumber > 0 {
                 if let vc = pageViewController.storyboard?.instantiateViewControllerWithIdentifier("ConductorPageView") as? ConductorPageViewController {
                     vc.pageNumber = pageNumber - 1
-                    vc.pageData = pageData[pageNumber - 1]
+
+                    var pageData = self.pageData[pageNumber - 1]
+                    pageData.advanceText = nil
+                    vc.pageData = pageData
                 }
             }
         }
@@ -64,7 +67,19 @@ public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
             if pageNumber < pageData.count - 1 {
                 if let vc = pageViewController.storyboard?.instantiateViewControllerWithIdentifier("ConductorPageView") as? ConductorPageViewController {
                     vc.pageNumber = pageNumber + 1
-                    vc.pageData = pageData[pageNumber + 1]
+
+                    var data = self.pageData[pageNumber + 1]
+
+                    if pageNumber == pageData.count - 1 {
+                        // last page
+                        data.hideSkipButton = true
+                    }
+                    else {
+                        // not the last page
+                        data.advanceText = nil
+                    }
+
+                    vc.pageData = data
                 }
             }
         }
@@ -75,7 +90,7 @@ public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
     public func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
         return pageData.count
     }
-
+    
     public func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return startingPage
     }
