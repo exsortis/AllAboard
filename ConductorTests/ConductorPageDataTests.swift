@@ -22,15 +22,26 @@ class ConductorPageDataTests: XCTestCase {
         super.tearDown()
     }
     
-    func testPageData() {
+    func testPageDataFullInit() {
 
-        let pageData = ConductorPageData(titleText: "title", bodyText: "body", image: nil, advanceText: "go", hideSkipButton: true)
+        let pageData = ConductorPageData(bodyText: "body", titleText: "title", image: nil, advanceText: "go", hideSkipButton: true)
 
         XCTAssertTrue(pageData.titleText == "title")
         XCTAssertTrue(pageData.bodyText == "body")
         XCTAssertNil(pageData.image)
         XCTAssertTrue(pageData.advanceText == "go")
         XCTAssertTrue(pageData.hideSkipButton)
+    }
+
+    func testPageDataShortInit() {
+
+        let pageData = ConductorPageData(bodyText: "body")
+
+        XCTAssertNil(pageData.titleText)
+        XCTAssertTrue(pageData.bodyText == "body")
+        XCTAssertNil(pageData.image)
+        XCTAssertNil(pageData.advanceText)
+        XCTAssertFalse(pageData.hideSkipButton)
     }
     
 }

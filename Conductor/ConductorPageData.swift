@@ -33,4 +33,16 @@ public struct ConductorPageData {
      * Determines whether the skip button should be hidden on the page. Defaults to `false`.
      */
     public var hideSkipButton : Bool = false
+
+    /**
+     * Designated initializer.
+     */
+    public init(bodyText : String, titleText : String? = nil, image : UIImage? = nil, advanceText : String? = nil, hideSkipButton : Bool = false) {
+        self.bodyText = bodyText
+        self.titleText = titleText
+        self.image = image
+        self.advanceText = advanceText
+        self.hideSkipButton = hideSkipButton
+    }
+
 }
