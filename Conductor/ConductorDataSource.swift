@@ -28,7 +28,7 @@ public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
      *
      * - parameter pageData: An array of `ConductorPageData` objects describing each page in the view.
      */
-    public init(pageData : [ConductorPageData]) {
+    public required init(pageData : [ConductorPageData]) {
         self.pageData = pageData
     }
 
