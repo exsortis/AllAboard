@@ -10,7 +10,7 @@ import XCTest
 @testable import Conductor
 
 
-class ConductorTests: XCTestCase {
+class ConductorTests: XCTestCase, ConductorDelegate {
     
     override func setUp() {
         super.setUp()
@@ -22,25 +22,28 @@ class ConductorTests: XCTestCase {
         super.tearDown()
     }
     
-    func testDataSource() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPageData() {
-
-    }
-
-    func testPageController() {
-
-    }
-
-    func testRootController() {
-
-    }
-
     func testRootObject() {
 
+        let data : [ConductorPageData] = []
+        let dataSource = ConductorDataSource(pageData: data)
+        let vc = Conductor.viewControllerWithDataSource(dataSource)
+
+        XCTAssertNotNil(vc)
     }
-    
+
+    func testRootObjectWithDelegate() {
+
+        let data : [ConductorPageData] = []
+        let dataSource = ConductorDataSource(pageData: data)
+        let vc = Conductor.viewControllerWithDataSource(dataSource, delegate: self)
+
+        XCTAssertNotNil(vc)
+    }
+
+
+    // MARK: - Conductor delegate methods
+
+    func conductorControllerUserWantsToSkip(controller: ConductorViewController) {
+        // ignore
+    }
 }
