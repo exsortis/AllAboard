@@ -5,3 +5,5 @@
 //  Created by Paul Schifferer on 7/9/16.
 //  Copyright © 2016 Pilgrimage Software. All rights reserved.
 //
+
+#include "../Libraries/xcconfigs/iOS/iOS-Framework.xcconfig"
