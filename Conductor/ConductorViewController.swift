@@ -15,10 +15,15 @@ import UIKit
 public protocol ConductorDelegate : class {
 
     /**
+     * A method that is called when the conductor finishes, whether from skipping or making it all the way to the end.
+     */
+    func conductorControllerFinished(controller : ConductorViewController)
+
+    /**
      * Method called when the user has tapped the "skip" button. The delegate should dismiss the conductor UI and
      * continue with the app.
      */
-    func conductorControllerUserWantsToSkip(controller : ConductorViewController)
+    func conductorController(controller : ConductorViewController, userWantsToSkipAtPage pageNumber : Int)
 
 }
 
@@ -28,6 +33,8 @@ public protocol ConductorDelegate : class {
 public class ConductorViewController: UIViewController, UIPageViewControllerDelegate {
 
     // MARK: - Properties
+
+    private var currentPage : Int = 0
 
     /**
      * Interface Builder property for the background image of the conductor view.
@@ -67,7 +74,7 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
      */
     public func skipTouched(sender : AnyObject?) {
 
-        self.delegate?.conductorControllerUserWantsToSkip(self)
+        self.delegate?.conductorController(self, userWantsToSkipAtPage: self.currentPage)
 
         if let nav = self.navigationController {
             nav.popViewControllerAnimated(true)
@@ -107,6 +114,9 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
 
     @objc public func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
 
+        if let cc = pendingViewControllers.first as? ConductorPageViewController {
+            currentPage = cc.pageNumber
+        }
     }
 
     //    @objc func pageViewController(pageViewController: UIPageViewController, spineLocationForInterfaceOrientation orientation: UIInterfaceOrientation) -> UIPageViewControllerSpineLocation {
