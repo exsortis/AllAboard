@@ -14,7 +14,12 @@ import UIKit
  */
 public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
 
-    private var pageData : [ConductorPageData]
+    // MARK: - Properties
+
+    /**
+     * Property for accessing page data set during initialization.
+     */
+    public private(set) var pageData : [ConductorPageData]
 
     /**
      * Property to store the starting page of the view.
@@ -63,7 +68,7 @@ public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
                 }
             }
         }
-        
+
         return nil
     }
 
@@ -74,5 +79,5 @@ public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
     public func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return startingPage
     }
-
+    
 }
