@@ -25,13 +25,15 @@ class ConductorDataSourceTests: XCTestCase {
     
     func testDataSource() {
 
-        let data : [ConductorPageData] = []
+        let data : [ConductorPageData] = [
+            ConductorPageData(bodyText: "body"),
+        ]
         let dataSource = ConductorDataSource(pageData: data)
 
         let pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         let count = dataSource.presentationCountForPageViewController(pageViewController)
 
-        XCTAssertTrue(count == 0)
+        XCTAssertTrue(count == 1)
     }
 
 }

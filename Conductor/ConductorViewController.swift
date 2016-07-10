@@ -15,7 +15,7 @@ import UIKit
 public protocol ConductorDelegate : class {
 
     /**
-     * Method called when the user has tapped the "skip" button. The delegate should dismiss the conductor UI and 
+     * Method called when the user has tapped the "skip" button. The delegate should dismiss the conductor UI and
      * continue with the app.
      */
     func conductorControllerUserWantsToSkip(controller : ConductorViewController)
@@ -68,7 +68,7 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
             nav.popViewControllerAnimated(true)
         }
         else {
-            self.dismissViewControllerAnimated(true) {                
+            self.dismissViewControllerAnimated(true) {
             }
         }
     }
@@ -80,15 +80,13 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
     override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "EmbedPageView" {
-            if let vc = segue.destinationViewController as? UIPageViewController {
-                vc.dataSource = self.dataSource
-                vc.delegate = self
+        if segue.identifier == "EmbedPageView",
+            let vc = segue.destinationViewController as? UIPageViewController {
+            vc.dataSource = self.dataSource
+            vc.delegate = self
 
-                if let iv = vc.storyboard?.instantiateViewControllerWithIdentifier("ConductorPageView") {
-                    vc.setViewControllers([ iv ], direction: .Forward, animated: true) { completed in
-                    }
-                }
+            if let cpv = vc.storyboard?.instantiateViewControllerWithIdentifier("ConductorPageView") {
+                vc.setViewControllers([ cpv ], direction: .Forward, animated: true) { completed in }
             }
         }
     }
@@ -111,5 +109,5 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
     @objc public func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         
     }
-
+    
 }
