@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name                    = "Conductor"
-s.version                 = "0.99.5"
+s.version                 = "0.99.6"
 s.summary                 = "A framework for displaying an 'on-boarding' UI"
 
 s.homepage                = "https://github.com/exsortis/Conductor"

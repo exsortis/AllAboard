@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g1g-Qu-pam">
-                                <rect key="frame" x="20" y="28" width="560" height="511"/>
+                                <rect key="frame" x="20" y="28" width="560" height="485"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uw7-Wk-ZFd">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="29"/>
@@ -29,10 +29,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTF-cN-G47">
-                                        <rect key="frame" x="0.0" y="39" width="560" height="284"/>
+                                        <rect key="frame" x="0.0" y="39" width="560" height="268"/>
                                     </imageView>
                                     <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7DB-5F-cHM">
-                                        <rect key="frame" x="0.0" y="333" width="560" height="178"/>
+                                        <rect key="frame" x="0.0" y="317" width="560" height="168"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -42,34 +42,37 @@
                                     <constraint firstItem="WTF-cN-G47" firstAttribute="height" secondItem="7DB-5F-cHM" secondAttribute="height" multiplier="1.6" id="QQr-eE-QCr"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szq-Cv-1ap">
-                                <rect key="frame" x="550" y="554" width="30" height="26"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="Skip"/>
-                                <connections>
-                                    <action selector="skipTouched:" destination="Vu8-uC-UWQ" eventType="touchUpInside" id="WwY-g0-2Zs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eI-b2-YFv">
-                                <rect key="frame" x="70" y="547" width="460" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <action selector="advanceTouched:" destination="Vu8-uC-UWQ" eventType="touchUpInside" id="Ian-LV-HOT"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ysw-DQ-mAl">
+                                <rect key="frame" x="20" y="521" width="560" height="59"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eI-b2-YFv">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Next"/>
+                                        <connections>
+                                            <action selector="advanceTouched:" destination="Vu8-uC-UWQ" eventType="touchUpInside" id="Ian-LV-HOT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szq-Cv-1ap">
+                                        <rect key="frame" x="0.0" y="33" width="560" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <state key="normal" title="Skip"/>
+                                        <connections>
+                                            <action selector="skipTouched:" destination="Vu8-uC-UWQ" eventType="touchUpInside" id="WwY-g0-2Zs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="u6A-xo-0jz" firstAttribute="top" secondItem="Szq-Cv-1ap" secondAttribute="bottom" constant="20" id="7XU-Ys-Pdc"/>
-                            <constraint firstItem="5eI-b2-YFv" firstAttribute="top" secondItem="g1g-Qu-pam" secondAttribute="bottom" constant="8" symbolic="YES" id="Cnb-6D-3Bz"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ysw-DQ-mAl" secondAttribute="bottom" constant="20" id="IEX-Bk-hNz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ysw-DQ-mAl" secondAttribute="trailing" id="IGE-X0-Dz4"/>
                             <constraint firstItem="g1g-Qu-pam" firstAttribute="top" secondItem="Hho-yb-DvF" secondAttribute="bottom" constant="8" id="K8c-OS-h5X"/>
                             <constraint firstItem="g1g-Qu-pam" firstAttribute="leading" secondItem="diU-gq-lxb" secondAttribute="leadingMargin" id="NxE-tc-gpu"/>
-                            <constraint firstItem="Szq-Cv-1ap" firstAttribute="trailing" secondItem="diU-gq-lxb" secondAttribute="trailingMargin" id="pYF-mk-zgJ"/>
+                            <constraint firstItem="ysw-DQ-mAl" firstAttribute="top" secondItem="g1g-Qu-pam" secondAttribute="bottom" constant="8" id="khx-pI-5gg"/>
+                            <constraint firstItem="ysw-DQ-mAl" firstAttribute="leading" secondItem="diU-gq-lxb" secondAttribute="leadingMargin" id="s3T-yl-d7p"/>
                             <constraint firstItem="g1g-Qu-pam" firstAttribute="trailing" secondItem="diU-gq-lxb" secondAttribute="trailingMargin" id="s5U-A1-G7j"/>
-                            <constraint firstItem="5eI-b2-YFv" firstAttribute="centerX" secondItem="diU-gq-lxb" secondAttribute="centerX" id="tIE-wp-brZ"/>
-                            <constraint firstItem="Szq-Cv-1ap" firstAttribute="leading" secondItem="5eI-b2-YFv" secondAttribute="trailing" constant="20" id="tM5-75-wZD"/>
-                            <constraint firstItem="u6A-xo-0jz" firstAttribute="top" secondItem="5eI-b2-YFv" secondAttribute="bottom" constant="20" id="x8y-Qz-DhK"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
