@@ -108,8 +108,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro-background" translatesAutoresizingMaskIntoConstraints="NO" id="doj-c1-4eM">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdm-2X-cEP">
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdm-2X-cEP">
                                 <rect key="frame" x="40" y="40" width="520" height="520"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="DoR-vw-P7s" kind="embed" identifier="EmbedPageView" id="oEV-nH-zpH"/>
                                 </connections>
@@ -117,14 +118,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Xdm-2X-cEP" firstAttribute="leading" secondItem="q3t-fr-G9H" secondAttribute="leadingMargin" constant="20" id="3Sj-m1-vfY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Xdm-2X-cEP" secondAttribute="trailing" constant="20" id="4m2-Sc-io6"/>
+                            <constraint firstItem="Xdm-2X-cEP" firstAttribute="top" secondItem="q3t-fr-G9H" secondAttribute="top" constant="40" id="1XU-3h-XKv"/>
+                            <constraint firstAttribute="bottom" secondItem="Xdm-2X-cEP" secondAttribute="bottom" constant="40" id="FLX-TB-1c1"/>
                             <constraint firstAttribute="trailing" secondItem="doj-c1-4eM" secondAttribute="trailing" id="GEK-P8-XOy"/>
                             <constraint firstItem="bKi-QZ-SMK" firstAttribute="top" secondItem="doj-c1-4eM" secondAttribute="bottom" id="JzF-kP-Nwp"/>
                             <constraint firstItem="doj-c1-4eM" firstAttribute="top" secondItem="q3t-fr-G9H" secondAttribute="topMargin" id="Ydy-sj-izG"/>
-                            <constraint firstItem="Xdm-2X-cEP" firstAttribute="top" secondItem="JZ5-vo-w4S" secondAttribute="bottom" constant="20" id="fcT-1u-lgg"/>
+                            <constraint firstAttribute="trailing" secondItem="Xdm-2X-cEP" secondAttribute="trailing" constant="40" id="g2h-pn-6XB"/>
                             <constraint firstItem="doj-c1-4eM" firstAttribute="leading" secondItem="q3t-fr-G9H" secondAttribute="leading" id="l0a-na-7ls"/>
-                            <constraint firstItem="bKi-QZ-SMK" firstAttribute="top" secondItem="Xdm-2X-cEP" secondAttribute="bottom" constant="40" id="l6t-VS-tec"/>
+                            <constraint firstItem="Xdm-2X-cEP" firstAttribute="leading" secondItem="q3t-fr-G9H" secondAttribute="leading" constant="40" id="rkb-9W-gJu"/>
                         </constraints>
                     </view>
                     <connections>
