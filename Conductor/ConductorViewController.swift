@@ -73,6 +73,14 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
 
         if currentPage >= dataSource.pageData.count {
             self.delegate?.conductorControllerFinished(self)
+
+            if let nav = self.navigationController {
+                nav.popViewControllerAnimated(true)
+            }
+            else {
+                self.dismissViewControllerAnimated(true) {
+                }
+            }
         }
         else {
 
