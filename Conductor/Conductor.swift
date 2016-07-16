@@ -33,5 +33,10 @@ public class Conductor {
         
         return nil
     }
+
+    public static var titleFont : UIFont = UIFont.boldSystemFontOfSize(24)
+    public static var textFont : UIFont = UIFont.systemFontOfSize(14)
+    public static var advanceButtonFont : UIFont = UIFont.systemFontOfSize(17)
+    public static var skipButtonFont : UIFont = UIFont.systemFontOfSize(11)
     
 }

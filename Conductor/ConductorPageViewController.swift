@@ -72,6 +72,7 @@ public class ConductorPageViewController: UIViewController {
             if let title = pageData.titleText {
                 titleLabel.text = title
                 titleLabel.hidden = false
+                titleLabel.font = Conductor.titleFont
             }
             else {
                 titleLabel.hidden = true
@@ -80,20 +81,22 @@ public class ConductorPageViewController: UIViewController {
             // image
             if let image = pageData.image {
                 imageView.image = image
-                imageView.hidden = false
             }
             else {
-                imageView.hidden = true
+                imageView.image = UIImage(named: "default-page-image", inBundle: NSBundle(forClass: self.dynamicType), compatibleWithTraitCollection: self.traitCollection)
             }
 
             // body
             bodyTextView.text = pageData.bodyText
+            bodyTextView.font = Conductor.textFont
 
             // advance button
             advanceButton.titleLabel?.text = pageData.advanceText ?? NSLocalizedString("conductor.page.advance.title", comment: "Advance button text")
+            advanceButton.titleLabel?.font = Conductor.advanceButtonFont
 
             // skip button
             skipButton.hidden = pageData.hideSkipButton ?? false
+            skipButton.titleLabel?.font = Conductor.skipButtonFont
         }
     }
 
