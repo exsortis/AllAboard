@@ -89,6 +89,7 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
         else {
             if let vc = dataSource.viewController(for: currentPage + 1, from: self.storyboard!) {
                 self.pageViewController.setViewControllers([ vc ], direction: .Forward, animated: true, completion: nil)
+                currentPage += 1
             }
         }
     }
