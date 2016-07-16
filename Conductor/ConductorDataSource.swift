@@ -38,7 +38,34 @@ public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
     }
 
 
-    // MARK: - Data source methods
+    // MARK: - API
+
+    public func viewController(`for` pageNumber : Int, from storyboard : UIStoryboard) -> UIViewController? {
+
+        if let vc = storyboard.instantiateViewControllerWithIdentifier("ConductorPageView") as? ConductorPageViewController {
+            vc.pageNumber = pageNumber
+
+            var pageData = self.pageData[pageNumber]
+
+            if pageNumber == self.pageData.count - 1 {
+                // last page
+                pageData.hideSkipButton = true
+            }
+            else {
+                // not the last page
+                pageData.advanceText = nil
+            }
+
+            vc.pageData = pageData
+
+            return vc
+        }
+
+        return nil
+    }
+
+
+    // MARK: - Page view controller data source methods
 
     @objc public func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
 
@@ -46,13 +73,7 @@ public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
             let pageNumber = ivc.pageNumber
 
             if pageNumber > 0 {
-                if let vc = pageViewController.storyboard?.instantiateViewControllerWithIdentifier("ConductorPageView") as? ConductorPageViewController {
-                    vc.pageNumber = pageNumber - 1
-
-                    var pageData = self.pageData[pageNumber - 1]
-                    pageData.advanceText = nil
-                    vc.pageData = pageData
-                }
+                return self.viewController(for: pageNumber - 1, from: viewController.storyboard!)
             }
         }
 
@@ -65,22 +86,7 @@ public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
             let pageNumber = ivc.pageNumber
 
             if pageNumber < pageData.count - 1 {
-                if let vc = pageViewController.storyboard?.instantiateViewControllerWithIdentifier("ConductorPageView") as? ConductorPageViewController {
-                    vc.pageNumber = pageNumber + 1
-
-                    var data = self.pageData[pageNumber + 1]
-
-                    if pageNumber == pageData.count - 1 {
-                        // last page
-                        data.hideSkipButton = true
-                    }
-                    else {
-                        // not the last page
-                        data.advanceText = nil
-                    }
-
-                    vc.pageData = data
-                }
+                return self.viewController(for: pageNumber + 1, from: viewController.storyboard!)
             }
         }
 

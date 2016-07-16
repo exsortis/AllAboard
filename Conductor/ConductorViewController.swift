@@ -35,6 +35,7 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
     // MARK: - Properties
 
     private var currentPage : Int = 0
+    private var pageViewController : UIPageViewController!
 
     /**
      * Interface Builder property for the background image of the conductor view.
@@ -86,7 +87,9 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
             }
         }
         else {
-
+            if let vc = dataSource.viewController(for: currentPage + 1, from: self.storyboard!) {
+                self.pageViewController.setViewControllers([ vc ], direction: .Forward, animated: true, completion: nil)
+            }
         }
     }
 
@@ -117,6 +120,8 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
             let vc = segue.destinationViewController as? UIPageViewController {
             vc.dataSource = self.dataSource
             vc.delegate = self
+
+            self.pageViewController = vc
 
             if let cpv = vc.storyboard?.instantiateViewControllerWithIdentifier("ConductorPageView") as? ConductorPageViewController,
                 let data = self.dataSource.pageData.first {
