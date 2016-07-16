@@ -49,7 +49,10 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
      * The data source for the conductor. This should be set before the view is loaded.
      */
     public var dataSource : ConductorDataSource!
-    public var backgroundImage : UIImage!
+    /**
+     * The image to use for the page view background.
+     */
+    public var backgroundImage : UIImage?
 
 
     // MARK: - Initialization
