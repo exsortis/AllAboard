@@ -54,7 +54,7 @@ public class ConductorPageViewController: UIViewController {
 
 
     // MARK: - Initialization
-    
+
     override public func viewDidLoad() {
         super.viewDidLoad()
 
@@ -104,11 +104,17 @@ public class ConductorPageViewController: UIViewController {
     // MARK: - UI callbacks
 
     @IBAction func advanceTouched(sender: UIButton) {
-        //        .sendAction(#selector(ConductorViewController.advanceTouched(_:)), to: nil, from: self, forEvent: nil)
+        let selector = #selector(ConductorViewController.advance(_:))
+        if let target = self.targetForAction(selector, withSender: self) as? NSObject {
+            target.performSelector(selector, withObject: self)
+        }
     }
 
     @IBAction func skipTouched(sender: UIButton) {
-        //        UIApplication.sharedApplication().sendAction(#selector(ConductorViewController.skipTouched(_:)), to: nil, from: self, forEvent: nil)
+        let selector = #selector(ConductorViewController.skip(_:))
+        if let target = self.targetForAction(selector, withSender: self) as? NSObject {
+            target.performSelector(selector, withObject: self)
+        }
     }
 
 

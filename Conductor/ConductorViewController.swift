@@ -72,7 +72,7 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
     /**
      * This method is called via the responder chain when the user wants to advance the UI to the next page.
      */
-    public func advanceTouched(sender : AnyObject?) {
+    public func advance(sender : AnyObject?) {
 
         if currentPage >= dataSource.pageData.count {
             self.delegate?.conductorControllerFinished(self)
@@ -93,7 +93,7 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
     /**
      * This method is called via the responder chain when the user wants to skip the UI.
      */
-    public func skipTouched(sender : AnyObject?) {
+    public func skip(sender : AnyObject?) {
 
         self.delegate?.conductorController(self, userWantsToSkipAtPage: self.currentPage)
 
