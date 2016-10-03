@@ -13,7 +13,7 @@ import UIKit
  * A view controller for a page in the conductor view. You shouldn't have to create these, unless you are implementing
  * your own data source.
  */
-open class ConductorPageViewController: UIViewController {
+public class ConductorPageViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -46,16 +46,16 @@ open class ConductorPageViewController: UIViewController {
     /**
      * Property to store the page number of the view that this controller represents.
      */
-    open var pageNumber : Int = 0
+    public var pageNumber : Int = 0
     /**
      * Property to store the page data that this controller should display.
      */
-    open var pageData : ConductorPageData?
+    public var pageData : ConductorPageData?
 
 
     // MARK: - Initialization
 
-    override open func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         updatePage()

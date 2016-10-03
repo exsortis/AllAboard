@@ -30,7 +30,7 @@ public protocol ConductorDelegate : class {
 /**
  * The view controller that manages the entire conductor UI.
  */
-open class ConductorViewController: UIViewController, UIPageViewControllerDelegate {
+public class ConductorViewController: UIViewController, UIPageViewControllerDelegate {
 
     // MARK: - Properties
 
@@ -45,20 +45,20 @@ open class ConductorViewController: UIViewController, UIPageViewControllerDelega
     /**
      * An optional delegate for the conductor.
      */
-    open weak var delegate : ConductorDelegate?
+    public weak var delegate : ConductorDelegate?
     /**
      * The data source for the conductor. This should be set before the view is loaded.
      */
-    open var dataSource : ConductorDataSource!
+    public var dataSource : ConductorDataSource!
     /**
      * The image to use for the page view background.
      */
-    open var backgroundImage : UIImage?
+    public var backgroundImage : UIImage?
 
 
     // MARK: - Initialization
 
-    override open func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -73,7 +73,7 @@ open class ConductorViewController: UIViewController, UIPageViewControllerDelega
     /**
      * This method is called via the responder chain when the user wants to advance the UI to the next page.
      */
-    open func advance(_ sender : AnyObject?) {
+    public func advance(_ sender : AnyObject?) {
 
         if currentPage >= dataSource.pageData.count {
             self.delegate?.conductorControllerFinished(self)
@@ -97,7 +97,7 @@ open class ConductorViewController: UIViewController, UIPageViewControllerDelega
     /**
      * This method is called via the responder chain when the user wants to skip the UI.
      */
-    open func skip(_ sender : AnyObject?) {
+    public func skip(_ sender : AnyObject?) {
 
         self.delegate?.conductorController(self, userWantsToSkipAtPage: self.currentPage)
 
@@ -114,7 +114,7 @@ open class ConductorViewController: UIViewController, UIPageViewControllerDelega
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "EmbedPageView",
@@ -135,11 +135,11 @@ open class ConductorViewController: UIViewController, UIPageViewControllerDelega
 
     // MARK: - Page view controller delegate methods
 
-    @objc open func pageViewControllerSupportedInterfaceOrientations(_ pageViewController: UIPageViewController) -> UIInterfaceOrientationMask {
+    @objc public func pageViewControllerSupportedInterfaceOrientations(_ pageViewController: UIPageViewController) -> UIInterfaceOrientationMask {
         return .all
     }
 
-    @objc open func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+    @objc public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
 
         if let cc = pendingViewControllers.first as? ConductorPageViewController {
             currentPage = cc.pageNumber
@@ -150,7 +150,7 @@ open class ConductorViewController: UIViewController, UIPageViewControllerDelega
     //        return .None
     //    }
 
-    @objc open func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    @objc public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         
     }
     

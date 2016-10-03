@@ -12,19 +12,19 @@ import UIKit
 /**
  * Canonical data source for a conductor view. You can make your own, but this one should do everything you need.
  */
-open class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
+public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
 
     // MARK: - Properties
 
     /**
      * Property for accessing page data set during initialization.
      */
-    open fileprivate(set) var pageData : [ConductorPageData]
+    public fileprivate(set) var pageData : [ConductorPageData]
 
     /**
      * Property to store the starting page of the view.
      */
-    open var startingPage : Int = 0
+    public var startingPage : Int = 0
 
     // MARK: - Initialization
 
@@ -40,7 +40,7 @@ open class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
 
     // MARK: - API
 
-    open func viewController(for pageNumber : Int, from storyboard : UIStoryboard) -> UIViewController? {
+    public func viewController(for pageNumber : Int, from storyboard : UIStoryboard) -> UIViewController? {
 
         if let vc = storyboard.instantiateViewController(withIdentifier: "ConductorPageView") as? ConductorPageViewController {
             vc.pageNumber = pageNumber
@@ -67,7 +67,7 @@ open class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
 
     // MARK: - Page view controller data source methods
 
-    @objc open func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    @objc public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
 
         if let ivc = viewController as? ConductorPageViewController {
             let pageNumber = ivc.pageNumber
@@ -80,7 +80,7 @@ open class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
         return nil
     }
 
-    @objc open func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    @objc public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
 
         if let ivc = viewController as? ConductorPageViewController {
             let pageNumber = ivc.pageNumber
@@ -93,11 +93,11 @@ open class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
         return nil
     }
 
-    open func presentationCount(for pageViewController: UIPageViewController) -> Int {
+    public func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return pageData.count
     }
     
-    open func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+    public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return startingPage
     }
     

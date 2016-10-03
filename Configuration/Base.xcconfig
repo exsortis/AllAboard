@@ -7,3 +7,5 @@
 //
 
 #include "../Libraries/xcconfigs/iOS/iOS-Framework.xcconfig"
+
+SWIFT_VERSION = 3.0
