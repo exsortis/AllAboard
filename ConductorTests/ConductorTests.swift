@@ -43,7 +43,12 @@ class ConductorTests: XCTestCase, ConductorDelegate {
 
     // MARK: - Conductor delegate methods
 
-    func conductorControllerUserWantsToSkip(controller: ConductorViewController) {
-        // ignore
+    func conductorControllerFinished(_ controller : ConductorViewController) {
+
     }
+
+    func conductorController(_ controller : ConductorViewController, userWantsToSkipAtPage pageNumber : Int) {
+
+    }
+
 }

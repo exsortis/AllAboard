@@ -13,7 +13,7 @@ import UIKit
  * A view controller for a page in the conductor view. You shouldn't have to create these, unless you are implementing
  * your own data source.
  */
-public class ConductorPageViewController: UIViewController {
+open class ConductorPageViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -46,16 +46,16 @@ public class ConductorPageViewController: UIViewController {
     /**
      * Property to store the page number of the view that this controller represents.
      */
-    public var pageNumber : Int = 0
+    open var pageNumber : Int = 0
     /**
      * Property to store the page data that this controller should display.
      */
-    public var pageData : ConductorPageData?
+    open var pageData : ConductorPageData?
 
 
     // MARK: - Initialization
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
 
         updatePage()
@@ -64,18 +64,18 @@ public class ConductorPageViewController: UIViewController {
 
     // MARK: - Private methods
 
-    private func updatePage() {
+    fileprivate func updatePage() {
 
         if let pageData = self.pageData {
 
             // title
             if let title = pageData.titleText {
                 titleLabel.text = title
-                titleLabel.hidden = false
+                titleLabel.isHidden = false
                 titleLabel.font = Conductor.titleFont
             }
             else {
-                titleLabel.hidden = true
+                titleLabel.isHidden = true
             }
 
             // image
@@ -83,7 +83,7 @@ public class ConductorPageViewController: UIViewController {
                 imageView.image = image
             }
             else {
-                imageView.image = UIImage(named: "default-page-image", inBundle: NSBundle(forClass: self.dynamicType), compatibleWithTraitCollection: self.traitCollection)
+                imageView.image = UIImage(named: "default-page-image", in: Bundle(for: type(of: self)), compatibleWith: self.traitCollection)
             }
 
             // body
@@ -95,7 +95,7 @@ public class ConductorPageViewController: UIViewController {
             advanceButton.titleLabel?.font = Conductor.advanceButtonFont
 
             // skip button
-            skipButton.hidden = pageData.hideSkipButton ?? false
+            skipButton.isHidden = pageData.hideSkipButton 
             skipButton.titleLabel?.font = Conductor.skipButtonFont
         }
     }
@@ -103,17 +103,17 @@ public class ConductorPageViewController: UIViewController {
 
     // MARK: - UI callbacks
 
-    @IBAction func advanceTouched(sender: UIButton) {
+    @IBAction func advanceTouched(_ sender: UIButton) {
         let selector = #selector(ConductorViewController.advance(_:))
-        if let target = self.targetForAction(selector, withSender: self) as? NSObject {
-            target.performSelector(selector, withObject: self)
+        if let target = self.target(forAction: selector, withSender: self) as? NSObject {
+            target.perform(selector, with: self)
         }
     }
 
-    @IBAction func skipTouched(sender: UIButton) {
+    @IBAction func skipTouched(_ sender: UIButton) {
         let selector = #selector(ConductorViewController.skip(_:))
-        if let target = self.targetForAction(selector, withSender: self) as? NSObject {
-            target.performSelector(selector, withObject: self)
+        if let target = self.target(forAction: selector, withSender: self) as? NSObject {
+            target.perform(selector, with: self)
         }
     }
 

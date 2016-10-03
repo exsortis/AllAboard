@@ -30,8 +30,8 @@ class ConductorDataSourceTests: XCTestCase {
         ]
         let dataSource = ConductorDataSource(pageData: data)
 
-        let pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
-        let count = dataSource.presentationCountForPageViewController(pageViewController)
+        let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        let count = dataSource.presentationCount(for: pageViewController)
 
         XCTAssertTrue(count == 1)
     }
