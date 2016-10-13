@@ -42,26 +42,25 @@ public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
 
     public func viewController(for pageNumber : Int, from storyboard : UIStoryboard) -> UIViewController? {
 
-        if let vc = storyboard.instantiateViewController(withIdentifier: "ConductorPageView") as? ConductorPageViewController {
-            vc.pageNumber = pageNumber
+        guard pageNumber < self.pageData.count else { return nil }
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "ConductorPageView") as? ConductorPageViewController else { return nil }
 
-            var pageData = self.pageData[pageNumber]
+        vc.pageNumber = pageNumber
 
-            if pageNumber == self.pageData.count - 1 {
-                // last page
-                pageData.hideSkipButton = true
-            }
-            else {
-                // not the last page
-                pageData.advanceText = nil
-            }
+        var pageData = self.pageData[pageNumber]
 
-            vc.pageData = pageData
-
-            return vc
+        if pageNumber == self.pageData.count - 1 {
+            // last page
+            pageData.hideSkipButton = true
+        }
+        else {
+            // not the last page
+            pageData.advanceText = nil
         }
 
-        return nil
+        vc.pageData = pageData
+
+        return vc
     }
 
 
