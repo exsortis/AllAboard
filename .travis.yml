@@ -1,0 +1,4 @@
+language: swift
+script:
+  - xctool -project Conductor.xcodeproj -scheme Conductor -sdk iphonesimulator clean build test
+  - xctool -project Conductor.xcodeproj -scheme Conductor clean build test
