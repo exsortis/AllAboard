@@ -91,6 +91,10 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
                 self.pageViewController.setViewControllers([ vc ], direction: .forward, animated: true, completion: nil)
                 currentPage += 1
             }
+            else {
+                // there are no view controllers left, so send a finish message
+                self.delegate?.conductorControllerFinished(self)
+            }
         }
     }
 
