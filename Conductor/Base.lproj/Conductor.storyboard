@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1jk-jp-Xmq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1jk-jp-Xmq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,18 +23,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uw7-Wk-ZFd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="17" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uw7-Wk-ZFd">
+                                <rect key="frame" x="26" y="8" width="323" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTF-cN-G47"/>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTF-cN-G47">
+                                <rect key="frame" x="36" y="45" width="303" height="338.5"/>
+                            </imageView>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7DB-5F-cHM">
+                                <rect key="frame" x="36" y="403.5" width="303" height="169.5"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5eI-b2-YFv">
+                                <rect key="frame" x="16" y="581" width="343" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="l6m-An-Efv"/>
                                 </constraints>
@@ -41,6 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Szq-Cv-1ap">
+                                <rect key="frame" x="16" y="633" width="343" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="gB9-Jh-YgC"/>
                                 </constraints>
@@ -62,7 +72,7 @@
                             <constraint firstItem="Uw7-Wk-ZFd" firstAttribute="top" secondItem="Hho-yb-DvF" secondAttribute="bottom" constant="8" id="ThJ-mh-s3G"/>
                             <constraint firstItem="5eI-b2-YFv" firstAttribute="trailing" secondItem="diU-gq-lxb" secondAttribute="trailingMargin" id="VWj-gk-hb5"/>
                             <constraint firstItem="Szq-Cv-1ap" firstAttribute="trailing" secondItem="diU-gq-lxb" secondAttribute="trailingMargin" id="bka-JX-gR0"/>
-                            <constraint firstItem="7DB-5F-cHM" firstAttribute="height" secondItem="WTF-cN-G47" secondAttribute="height" id="cTM-BH-RW8"/>
+                            <constraint firstItem="7DB-5F-cHM" firstAttribute="height" secondItem="WTF-cN-G47" secondAttribute="height" multiplier="0.5" id="cTM-BH-RW8"/>
                             <constraint firstItem="Szq-Cv-1ap" firstAttribute="leading" secondItem="diU-gq-lxb" secondAttribute="leadingMargin" id="czi-uP-RGi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Uw7-Wk-ZFd" secondAttribute="trailing" constant="10" id="ekh-Bz-Yzq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7DB-5F-cHM" secondAttribute="trailing" constant="20" id="hMR-0L-mZu"/>
@@ -103,8 +113,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro-background" translatesAutoresizingMaskIntoConstraints="NO" id="doj-c1-4eM"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro-background" translatesAutoresizingMaskIntoConstraints="NO" id="doj-c1-4eM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdm-2X-cEP">
+                                <rect key="frame" x="40" y="40" width="295" height="617"/>
                                 <connections>
                                     <segue destination="DoR-vw-P7s" kind="embed" identifier="EmbedPageView" id="oEV-nH-zpH"/>
                                 </connections>
