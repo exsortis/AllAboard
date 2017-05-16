@@ -22,9 +22,9 @@ public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
     public fileprivate(set) var pageData : [ConductorPageData]
 
     /**
-     * Property to store the starting page of the view.
+     * Property to store the page of the view.
      */
-    public var startingPage : Int = 0
+    public var currentPage : Int = 0
 
     // MARK: - Initialization
 
@@ -97,7 +97,7 @@ public class ConductorDataSource : NSObject, UIPageViewControllerDataSource {
     }
     
     public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return startingPage
+        return currentPage
     }
     
 }
