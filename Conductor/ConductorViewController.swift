@@ -88,8 +88,9 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
         }
         else {
             if let vc = dataSource.viewController(for: currentPage + 1, from: self.storyboard!) {
-                self.pageViewController.setViewControllers([ vc ], direction: .forward, animated: true, completion: nil)
                 currentPage += 1
+                self.dataSource.currentPage = currentPage
+                self.pageViewController.setViewControllers([ vc ], direction: .forward, animated: true, completion: nil)
             }
             else {
                 // there are no view controllers left, so send a finish message
