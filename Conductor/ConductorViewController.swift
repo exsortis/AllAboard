@@ -109,8 +109,7 @@ public class ConductorViewController: UIViewController, UIPageViewControllerDele
             nav.popViewController(animated: true)
         }
         else {
-            self.dismiss(animated: true) {
-            }
+            self.dismiss(animated: true, completion: nil)
         }
     }
 
