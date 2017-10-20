@@ -1,3 +1,6 @@
+
+[![Build Status](https://travis-ci.org/exsortis/Conductor.svg?branch=master)](https://travis-ci.org/exsortis/Conductor) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) [![Cocoapods compatible](https://img.shields.io/cocoapods/v/Conductor.svg?style=flat)](https://cocoapods.org/pods/Conductor) [![License: MIT](https://img.shields.io/cocoapods/l/Conductor.svg?style=flat)](http://opensource.org/licenses/MIT)
+
 # Conductor
 
 A framework for providing an app "on-boarding" UI
@@ -73,7 +76,7 @@ func conductorController(_ controller : ConductorViewController, userWantsToSkip
 
 ## Copyright
 
-Copyright Â© 2016-7 Pilgrimage Software
+Copyright © 2016-7 Pilgrimage Software
 
 ## License
 
